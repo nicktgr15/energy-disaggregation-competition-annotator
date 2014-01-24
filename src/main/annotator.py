@@ -8,9 +8,9 @@ class Annotator:
 
     def __init__(self):
         # Path to .mat file
-        self.matlab_data = "/Users/tsipan01/Documents/kaggle/H1/Tagged_Training_10_22_1350889201.mat"
+        self.matlab_data = "/some/path/Tagged_Training_10_22_1350889201.mat"
         # Path to .json file
-        self.json_annotations = "/Users/tsipan01/Documents/kaggle/H1/Tagged_Training_10_22_1350889201_annotationsTESTTEST.json"
+        self.json_annotations = "/some/path/Tagged_Training_10_22_1350889201_annotations.json"
         # If True, annotations are loaded from the json file.
         self.load_from_json = True
 
