@@ -1,7 +1,6 @@
 import scipy.io
 import matplotlib.pyplot as plt
 import json
-import sys
 from utils.draggable_axvspan import DraggableAxvspan
 import argparse
 
