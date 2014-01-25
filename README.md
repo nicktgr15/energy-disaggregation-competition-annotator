@@ -8,7 +8,7 @@ python annotator.py {matlab-file} {json-file} {load-annotations-from-json}
 
 * <b>matlab-file</b>: .mat file containing data and annotations
 * <b>json-file</b>: .json file containing annotations only
-* <b>load-annotations-from-json</b>: if set to True the annotations are loaded from the json-file
+* <b>load-annotations-from-json</b>: if set to True the annotations are loaded from the json-file (optional)
 
 
 
