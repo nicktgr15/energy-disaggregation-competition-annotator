@@ -116,6 +116,7 @@ def main():
     parser.add_argument("json_file", nargs=1)
     parser.add_argument("load_annotations_from_json", nargs='?', default = False)
     args = parser.parse_args()
+    
     annotator = Annotator(args.matlab_file, args.json_file, args.load_annotations_from_json);
     annotator.create_annotator();
 

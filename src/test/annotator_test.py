@@ -31,7 +31,7 @@ class TestSequenceFunctions(unittest.TestCase):
             ]
         }]'''
 
-        self.annotator = Annotator()
+        self.annotator = Annotator("/some/path/file.mat",'some/path/file.json', False)
         self.annotator.read_json_file = MagicMock(return_value=json.loads(json_contents))
 
     def test_get_annotations_from_json(self):
