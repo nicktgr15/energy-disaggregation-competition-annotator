@@ -1,21 +1,19 @@
 import scipy.io
 import matplotlib.pyplot as plt
 import json
+import sys
 from utils.draggable_axvspan import DraggableAxvspan
+import argparse
 
 
 class Annotator:
 
-    def __init__(self):
-        # Path to .mat file
-        self.matlab_data = "/some/path/Tagged_Training_10_22_1350889201.mat"
-        # Path to .json file
-        self.json_annotations = "/some/path/Tagged_Training_10_22_1350889201_annotations.json"
-        # If True, annotations are loaded from the json file.
-        self.load_from_json = True
-
-    dr = []
-    obj_id_label = None;
+    def __init__(self, matlab_file, json_file, load_annotations_from_json):
+        self.matlab_file = matlab_file[0]
+        self.json_file = json_file[0]
+        self.load_annotations_from_json = load_annotations_from_json
+        self.dr = []
+        self.obj_id_label = None;
 
     def read_json_file(self, json_file):
         with open(json_file, 'r') as file:
@@ -46,7 +44,7 @@ class Annotator:
         for obj in self.dr:
             if obj.get_annotation_class() is not None:
                 d.append(obj)
-        with open(self.json_annotations, 'w') as f:
+        with open(self.json_file, 'w') as f:
             f.write(str(d))
         print str(d)
 
@@ -60,7 +58,7 @@ class Annotator:
         self.dr[int(self.obj_id_label.get_text())].set_colour("g")
 
     def create_annotator(self):
-        mat = scipy.io.loadmat(self.matlab_data)
+        mat = scipy.io.loadmat(self.matlab_file)
 
         timeticks1 = mat['Buffer']['TimeTicks1'][0][0].flatten()
         timeticks2 = mat['Buffer']['TimeTicks2'][0][0].flatten()
@@ -71,8 +69,8 @@ class Annotator:
         i1_abs = abs(i1)
         i2_abs = abs(i2)
 
-        if self.load_from_json:
-            annotations = self.get_annotations_from_json(self.json_annotations)
+        if self.load_annotations_from_json:
+            annotations = self.get_annotations_from_json(self.json_file)
         else:
             tags = mat["Buffer"]["TaggingInfo"][0][0]
             annotations = self.get_annotations_from_tags(tags)
@@ -113,7 +111,12 @@ class Annotator:
 
 
 def main():
-    annotator = Annotator();
+    parser = argparse.ArgumentParser();
+    parser.add_argument("matlab_file",nargs=1)
+    parser.add_argument("json_file", nargs=1)
+    parser.add_argument("load_annotations_from_json", nargs='?', default = False)
+    args = parser.parse_args()
+    annotator = Annotator(args.matlab_file, args.json_file, args.load_annotations_from_json);
     annotator.create_annotator();
 
 if __name__ == "__main__": main()
