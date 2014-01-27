@@ -10,17 +10,15 @@ The annotator was developed to help fix the alignment of the annotations provide
 
 <h4> How to use </h4>
 
-python annotator.py {matlab-file} {json-file} {load-annotations-from-json}
+python annotator.py {matlab-file} {json-file} --load-from-json
 
 * <b>matlab-file</b>: .mat file containing data and annotations
 * <b>json-file</b>: .json file containing annotations only
-* <b>load-annotations-from-json</b>: if set to True the annotations are loaded from the json-file (optional)
+* <b>--load-from-json</b>: if set the annotations are loaded from the json-file (optional)
 
 
+<a href="http://s149.photobucket.com/user/nicktgr15/media/1_zps381b15cf.png.html" target="_blank"><img src="http://i149.photobucket.com/albums/s67/nicktgr15/1_zps381b15cf.png" border="0" alt=" photo 1_zps381b15cf.png"/></a>
 
+<a href="http://s149.photobucket.com/user/nicktgr15/media/2_zps7c13a554.png.html" target="_blank"><img src="http://i149.photobucket.com/albums/s67/nicktgr15/2_zps7c13a554.png" border="0" alt=" photo 2_zps7c13a554.png"/></a>
 
-<a href="http://s149.photobucket.com/user/nicktgr15/media/misalinged_zps7ca4a449.png.html" target="_blank"><img src="http://i149.photobucket.com/albums/s67/nicktgr15/misalinged_zps7ca4a449.png" border="0" alt=" photo misalinged_zps7ca4a449.png"/></a>
-
-<a href="http://s149.photobucket.com/user/nicktgr15/media/properlyaligned_zpsf2a0212d.png.html" target="_blank"><img src="http://i149.photobucket.com/albums/s67/nicktgr15/properlyaligned_zpsf2a0212d.png" border="0" alt=" photo properlyaligned_zpsf2a0212d.png"/></a>
-
-<a href="http://s149.photobucket.com/user/nicktgr15/media/annotationsloadedfromjson_zps308ffa8e.png.html" target="_blank"><img src="http://i149.photobucket.com/albums/s67/nicktgr15/annotationsloadedfromjson_zps308ffa8e.png" border="0" alt=" photo annotationsloadedfromjson_zps308ffa8e.png"/></a>
+<a href="http://s149.photobucket.com/user/nicktgr15/media/3_zps4c92b356.png.html" target="_blank"><img src="http://i149.photobucket.com/albums/s67/nicktgr15/3_zps4c92b356.png" border="0" alt=" photo 3_zps4c92b356.png"/></a>
