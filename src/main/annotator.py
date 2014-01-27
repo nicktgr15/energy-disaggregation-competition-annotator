@@ -79,8 +79,10 @@ class Annotator:
 
         plt.subplots_adjust(bottom=0.15)
 
-        plt.plot(timeticks2, i2_abs[:, 0])
-        plt.plot(timeticks1, i1_abs[:, 0])
+        plt.plot(timeticks1, i1_abs[:, 0], 'b', label="current phase 1") 
+        plt.plot(timeticks2, i2_abs[:, 0], 'r', label="current phase 2")
+        
+        ax.legend()
 
         fg = plt.figtext(0.02, 0.02, "none")
         self.obj_id_label = plt.figtext(0.02, 0.06, "none")
