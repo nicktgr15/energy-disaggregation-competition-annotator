@@ -115,10 +115,11 @@ def main():
     parser = argparse.ArgumentParser();
     parser.add_argument("matlab_file",nargs=1)
     parser.add_argument("json_file", nargs=1)
-    parser.add_argument("load_annotations_from_json", nargs='?', default = False)
+    parser.add_argument('--load-from-json',dest='load_from_json',action='store_true')
+    parser.set_defaults(load_from_json=False)
     args = parser.parse_args()
     
-    annotator = Annotator(args.matlab_file, args.json_file, args.load_annotations_from_json);
+    annotator = Annotator(args.matlab_file, args.json_file, args.load_from_json);
     annotator.create_annotator();
 
 if __name__ == "__main__": main()
